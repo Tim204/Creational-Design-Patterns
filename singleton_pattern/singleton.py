@@ -13,12 +13,10 @@ class ConfigManager(ABC):
     def get(self, key):
         return self._setting.get(key)
 
-    def get_instance(self):
-        return self.config
 
 
 def client():
-    manage = ConfigManager.get_instance()
+    manage = ConfigManager()
     manage.set("name", "timas")
     print(manage.get("name"))
 
